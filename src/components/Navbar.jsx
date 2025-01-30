@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = () => {
 
   return (
-    <div className="navbar-container hover:scale-105 transition duration-400 fixed top-3 left-1/2 transform -translate-x-1/2 w-1/2 h-16 p-1  bg-white/30 backdrop-blur-sm shadow-lg border border-gray-200 rounded-full z-50">
+    <div className="navbar-container hover:scale-105 transition duration-400 fixed top-3 left-1/2 transform -translate-x-1/2 w-3/4 h-16 p-1 bg-[#14071b]/30 backdrop-blur-sm shadow-lg border border-[#14071b] rounded-full z-50">
       <div className="flex justify-between items-center h-full px-6">
         {/* Left Side Content */}
         <div className="flex space-x-4">
