@@ -34,7 +34,7 @@ const Squares = ({
           const squareX = x - (gridOffset.current.x % squareSize);
           const squareY = y - (gridOffset.current.y % squareSize);
 
-          ctx.lineWidth = 0.03; // Thin border
+          ctx.lineWidth = 0.01; // Thin border
           ctx.strokeStyle = borderColor;
           ctx.strokeRect(squareX, squareY, squareSize, squareSize);
         }
