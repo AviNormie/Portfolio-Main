@@ -4,7 +4,7 @@ import Squares from '../blocks/Backgrounds/Squares/Squares';
 import LeftBar from '../components/LeftBar';
 function First() {
   return (
-    <div className="relative bg-[#1E0A2A] w-full h-screen">
+    <div className="relative bg-[#1E0A2A] w-full h-full">
       {/* Background Squares */}
       <div className="absolute inset-0 z-0">
         <Squares
