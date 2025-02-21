@@ -2,32 +2,64 @@ import React, { useState, useEffect } from 'react';
 
 const LeftBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollPosition / windowHeight) * 100;
-    setScrollProgress(progress);
-  };
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Add initial delay for smooth appearance
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
+
+    const handleScroll = () => {
+      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      
+      // Calculate scroll percentage
+      const progress = Math.min((scrolled / windowHeight) * 100, 100);
+      setScrollProgress(progress);
+    };
+
+    // Initial call
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <div
-      className="fixed top-0 left-0 w-1 h-full bg-[#1E0A2A] shadow-lg rounded-md"
-      style={{
-        boxShadow: scrollProgress > 0 ? '0 0 15px rgba(255, 0, 255, 0.75)' : 'none', // Glowing effect
-      }}
-    >
+    <div className="fixed top-0 left-0 h-full w-1 z-50 pointer-events-none">
+      {/* Background bar */}
+      <div 
+        className={`h-full w-full bg-[#1E0A2A] transition-opacity duration-1000 ${
+          isVisible ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+
+      {/* Progress bar */}
       <div
-        className="w-full bg-purple-600 transition-all duration-300"
+        className="absolute top-0 left-0 w-full transition-all duration-300 ease-out"
         style={{
           height: `${scrollProgress}%`,
+          background: 'linear-gradient(to bottom, #9333ea, #db2777)',
+          boxShadow: '0 0 20px rgba(147, 51, 234, 0.5)',
+          borderRadius: '0 0 4px 4px'
         }}
-      ></div>
+      />
+
+      {/* Glowing overlay */}
+      <div
+        className="absolute top-0 left-0 w-full"
+        style={{
+          height: `${scrollProgress}%`,
+          boxShadow: '0 0 30px rgba(219, 39, 119, 0.3)',
+          transition: 'height 300ms ease-out'
+        }}
+      />
     </div>
   );
 };
