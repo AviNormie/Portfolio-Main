@@ -73,7 +73,6 @@ const ExperienceSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Get the highest active checkpoint to determine line glow height
   const getLineGlowHeight = () => {
     if (activeCheckpoints.size === 0) return '0%';
     const highestActive = Math.max(...Array.from(activeCheckpoints));
@@ -90,7 +89,7 @@ const ExperienceSection = () => {
         {/* Base timeline line */}
         <div 
           ref={timelineRef}
-          className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-1 bg-purple-600/20"
+          className="absolute right-8 md:left-1/2 md:transform md:-translate-x-1/2 w-1 bg-purple-600/20"
           style={{
             height: 'calc(100% - 100px)',
             top: '50px'
@@ -99,7 +98,7 @@ const ExperienceSection = () => {
 
         {/* Glowing timeline overlay */}
         <div 
-          className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-pink-500 transition-all duration-500"
+          className="absolute right-8 md:left-1/2 md:transform md:-translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-pink-500 transition-all duration-500"
           style={{
             height: getLineGlowHeight(),
             top: '50px',
@@ -113,13 +112,11 @@ const ExperienceSection = () => {
           <div
             key={exp.title}
             ref={el => checkpointRefs.current[index] = el}
-            className={`relative flex items-center ${
-              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-            } gap-8`}
+            className={`relative flex items-center md:flex-row gap-8`}
           >
             {/* Timeline checkpoint */}
             <div 
-              className={`absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full transition-all duration-500 z-10
+              className={`absolute right-8 md:left-1/2 md:transform md:-translate-x-1/2 w-4 h-4 rounded-full transition-all duration-500 z-10
                 ${activeCheckpoints.has(index) 
                   ? 'bg-purple-500 border-purple-300 shadow-[0_0_15px_rgba(147,51,234,0.5)]' 
                   : 'bg-purple-600 border-purple-900'
@@ -134,7 +131,8 @@ const ExperienceSection = () => {
                 ? 'bg-purple-900/40 scale-105' 
                 : 'bg-purple-900/20'
               } 
-              border border-purple-600/30`}
+              border border-purple-600/30
+              ${index % 2 === 0 ? 'md:mr-auto pr-12 md:pr-6' : 'md:ml-auto pl-12 md:pl-6'}`}
             >
               <div className="flex items-start gap-4">
                 <div className={`p-3 rounded-lg bg-gradient-to-br ${exp.color} bg-opacity-20 

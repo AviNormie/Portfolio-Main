@@ -154,7 +154,7 @@ const Main = () => {
             <div className="w-full h-full bg-purple-900/20 rounded-xl border border-purple-600/30 transition-all duration-300 group-hover:bg-purple-900/30 group-hover:border-purple-500 p-6">
               <Terminal 
                 size={48} 
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" 
+                className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" 
               />
               <div className="font-mono text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p>$ npm install passion</p>
