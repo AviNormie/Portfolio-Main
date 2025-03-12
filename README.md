@@ -14,9 +14,6 @@ Welcome to my personal portfolio! This website showcases my projects, skills, an
 - **Hosting:** Vercel (Frontend),
 - **Storage:** Cloudinary (for image uploads)
 
-## 📸 Screenshots
-_(Add relevant screenshots here)_
-
 ## 🔧 Installation & Running Locally
 ### Clone the repository
 ```sh
