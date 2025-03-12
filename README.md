@@ -1,8 +1,54 @@
-# React + Vite
+# 🚀 My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! This website showcases my projects, skills, and experience as a developer.
 
-Currently, two official plugins are available:
+## 🌟 Features
+- **About Me** - A brief introduction about who I am and what I do.
+- **Projects** - Showcasing my best work with live demos and source code links.
+- **Skills** - Technologies and tools I specialize in.
+- **Experience** - Work experience and achievements.
+- **Contact** - Ways to connect with me.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- **Frontend:** Next.js (React), Tailwind CSS
+- **Hosting:** Vercel (Frontend),
+- **Storage:** Cloudinary (for image uploads)
+
+## 📸 Screenshots
+_(Add relevant screenshots here)_
+
+## 🔧 Installation & Running Locally
+### Clone the repository
+```sh
+git clone https://github.com/your-username/your-portfolio.git
+```
+
+### Navigate to the project folder
+```sh
+cd your-portfolio
+```
+
+### Install dependencies
+```sh
+npm install  # or yarn install
+```
+
+### Start the development server
+```sh
+npm run dev  # or yarn dev
+```
+
+Then, open **http://localhost:3000** in your browser.
+
+## 🚀 Deployment
+### Deploy on Vercel
+```sh
+vercel
+```
+
+## ⭐ Show Your Support
+If you like this project, give it a ⭐ on GitHub!
+
+---
+_Made with ❤️ by [Avi Srivastava]_
+
