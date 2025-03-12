@@ -20,7 +20,7 @@ _(Add relevant screenshots here)_
 ## 🔧 Installation & Running Locally
 ### Clone the repository
 ```sh
-git clone https://github.com/your-username/your-portfolio.git
+git clone https://github.com/AviNormie/Portfolio-Main.git
 ```
 
 ### Navigate to the project folder
